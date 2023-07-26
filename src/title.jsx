@@ -1,7 +1,7 @@
 import React from "react";
 
-function Title({ children }) {
-  return <h1>{children}</h1>;
+function Title() {
+  return <h1>Зона видимости</h1>;
 }
 
 export default Title;

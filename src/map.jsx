@@ -1,6 +1,6 @@
 import React from "react";
 
-function Gallery({ src, alt }) {
+function Map({ src, alt }) {
   return (
     <div>
       <img width="200" height="257" src={src} alt={alt} />
@@ -8,4 +8,4 @@ function Gallery({ src, alt }) {
   );
 }
 
-export default Gallery;
+export default Map;
