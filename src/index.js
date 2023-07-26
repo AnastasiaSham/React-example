@@ -1,5 +1,14 @@
+import {StrictMode} from 'react';
 import ReactDOM from "react-dom";
-import ProductPage from "./product-page";
+import App from "./App";
+import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<ProductPage />, rootElement);
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>, 
+  rootElement
+);
+
+reportWebVitals();

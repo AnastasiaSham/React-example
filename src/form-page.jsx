@@ -1,14 +1,14 @@
 import React from "react";
 import Title from "./title";
-import Description from "./description";
+import Sider from "./sider";
 
-function ProductPage() {
+function FormPage() {
   return (
     <section>
       <Title></Title>
-      <Description />
+      <Sider />
     </section>
   );
 }
 
-export default ProductPage;
+export default FormPage;

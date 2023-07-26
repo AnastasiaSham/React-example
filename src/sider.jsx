@@ -26,7 +26,8 @@ const SubmitButton = ({ form }) => {
   );
 };
 
-const Description = () => {
+const Sider = () => {
+  
   const [form] = Form.useForm();
   return (
     <Form form={form} name="validateOnly" layout="vertical" autoComplete="on">
@@ -77,5 +78,5 @@ const Description = () => {
     </Form>
   );
 };
-export default Description;
+export default Sider;
 
