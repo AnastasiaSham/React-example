@@ -4,7 +4,6 @@ import React from 'react';
 const SubmitButton = ({ form }) => {
   const [submittable, setSubmittable] = React.useState(false);
 
-  // Watch all values
   const values = Form.useWatch([], form);
   React.useEffect(() => {
     form
@@ -26,6 +25,7 @@ const SubmitButton = ({ form }) => {
     </Button>
   );
 };
+
 const Description = () => {
   const [form] = Form.useForm();
   return (
@@ -46,7 +46,7 @@ const Description = () => {
       >
         <Input placeholder='300'/>
       </Form.Item>
-      
+
       <Form.Item label="Точка на карте" style={{ marginBottom: 0 }}>
       
         <Form.Item
