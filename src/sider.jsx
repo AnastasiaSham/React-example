@@ -26,15 +26,21 @@ const SubmitButton = ({ form }) => {
   );
 };
 
-const Sider = () => {
-  
+const Sider = ({submitHandler}) => {
   const [form] = Form.useForm();
   return (
-    <Form form={form} name="validateOnly" layout="vertical">
+    <Form 
+    onFinish={submitHandler}
+    form={form} 
+    name="validateOnly" 
+    layout="vertical" 
+    autoComplete='on'
+    >
       <Form.Item
         name="city"
         label="Город"
         rules={[{required: true}]}
+        style={{ width: '90%' }}
       >
         <Input placeholder='Санкт-Петербург'/>
       </Form.Item>
@@ -42,6 +48,7 @@ const Sider = () => {
         name="view_distance"
         label="Дальность видимости, м"
         rules={[{required: true}]}
+        style={{ width: '90%' }}
       >
         <Input placeholder='300'/>
       </Form.Item>
@@ -51,7 +58,7 @@ const Sider = () => {
         <Form.Item
           name="x_from"
           rules={[{ required: true }]}
-          style={{ display: 'inline-block', width: 'calc(50%)' }}
+          style={{ display: 'inline-block', width: '45%' }}
         >
           <Input placeholder="x" />
         </Form.Item>
@@ -59,7 +66,7 @@ const Sider = () => {
         <Form.Item
           name="y_from"
           rules={[{ required: true }]}
-          style={{ display: 'inline-block', width: 'calc(50%)' }}
+          style={{ display: 'inline-block', width: '45%' }}
         >
           <Input placeholder="y" />
         </Form.Item>
@@ -68,8 +75,8 @@ const Sider = () => {
 
       <Form.Item>
         <Space>
-          <SubmitButton form={form} />
-          <Button htmlType="reset">Отменить</Button>
+          {/* <SubmitButton form={form} /> */}
+          <Button onClick={() => form.submit()}>Добавить</Button>
         </Space>
       </Form.Item>
 
