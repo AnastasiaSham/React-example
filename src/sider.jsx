@@ -1,4 +1,4 @@
-import { Button, Form, Input, Space } from 'antd';
+import { Button, Form, Input, Select, Space } from 'antd';
 import React from 'react';
 
 const SubmitButton = ({ form }) => {
@@ -34,15 +34,18 @@ const Sider = ({submitHandler}) => {
     form={form} 
     name="validateOnly" 
     layout="vertical" 
-    autoComplete='on'
-    >
+    autoComplete='on'>
       <Form.Item
         name="city"
         label="Город"
         rules={[{required: true}]}
         style={{ width: '90%' }}
       >
-        <Input placeholder='Санкт-Петербург'/>
+        <Select options={[
+          {label: 'Санкт-Петербург', value: 'saint-petersburg'},
+          {label: 'Краснодар', value: 'krasnodar'},
+          {label: 'Севастополь', value: 'sevastopol'}
+        ]} placeholder='Санкт-Петербург'/>
       </Form.Item>
       <Form.Item
         name="view_distance"
