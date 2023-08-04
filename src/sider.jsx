@@ -1,30 +1,6 @@
 import { Button, Form, Input, Select, Space } from 'antd';
 import React from 'react';
 
-const SubmitButton = ({ form }) => {
-  const [submittable, setSubmittable] = React.useState(false);
-
-  const values = Form.useWatch([], form);
-  React.useEffect(() => {
-    form
-      .validateFields({
-        validateOnly: true,
-      })
-      .then(
-        () => {
-          setSubmittable(true);
-        },
-        () => {
-          setSubmittable(false);
-        },
-      );
-  }, [values]);
-  return (
-    <Button type="primary" htmlType="submit" disabled={!submittable}>
-      Добавить
-    </Button>
-  );
-};
 
 const Sider = ({submitHandler}) => {
   const [form] = Form.useForm();
@@ -34,7 +10,9 @@ const Sider = ({submitHandler}) => {
     form={form} 
     name="validateOnly" 
     layout="vertical" 
-    autoComplete='on'>
+    autoComplete='on'
+    style={{ padding: '10px' }}
+    >
       <Form.Item
         name="city"
         label="Город"
@@ -78,7 +56,6 @@ const Sider = ({submitHandler}) => {
 
       <Form.Item>
         <Space>
-          {/* <SubmitButton form={form} /> */}
           <Button onClick={() => form.submit()}>Добавить</Button>
         </Space>
       </Form.Item>
