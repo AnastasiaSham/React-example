@@ -2,8 +2,8 @@ import { Button, Form, Input, Select, Space } from 'antd';
 import React from 'react';
 
 
-const Sider = ({submitHandler}) => {
-  const [form] = Form.useForm();
+const Sider = ({submitHandler, form}) => {
+ 
   return (
     <Form 
     onFinish={submitHandler}

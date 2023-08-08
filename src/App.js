@@ -11,7 +11,7 @@ function App() {
   const formSubmitHandler = (params) => axios.get(`http://10.32.1.65:5000/api/v2/visibility_analysis/visibility_analysis`,{params: params}).then(({data}) => setData(data))
   const [form] = Form.useForm();
   const mapClickHandler = (event) => {
-    form.setFields({
+    form.setFieldsValue({
       x_from: event.lngLat.lat, 
       y_from: event.lngLat.lng
     })
